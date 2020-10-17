@@ -16,17 +16,4 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(movement * speed * Time.deltaTime);
     }
-
-    // Physics engine update
-    void FixedUpdate()
-    {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-
-#if UNITY_EDITOR
-        Debug.DrawRay(transform.position, fwd, Color.green);
-#endif
-
-        if (Physics.Raycast(transform.position, fwd, 10))
-            print("There is something in front of the object!");
-    }
 }
