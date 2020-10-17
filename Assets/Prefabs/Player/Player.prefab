@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 3626000750218830026}
   - component: {fileID: 3866883509514608535}
   - component: {fileID: 5660356524429471386}
-  - component: {fileID: 738030498}
   - component: {fileID: 738030495}
   m_Layer: 8
   m_Name: Player
@@ -149,22 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 3866883509514608535}
   speed: 2
---- !u!54 &738030498
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785315045075935298}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &738030495
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -242,6 +225,10 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 3626000750218830026}
+    - target: {fileID: 5149156596330568610, guid: 45f2e08366d7160428c33bc1ec6dd3de, type: 3}
+      propertyPath: maxViewDistance
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f2e08366d7160428c33bc1ec6dd3de, type: 3}
 --- !u!4 &7314054338985399368 stripped
