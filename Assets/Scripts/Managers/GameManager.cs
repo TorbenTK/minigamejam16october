@@ -8,9 +8,13 @@ public class GameManager : MonoBehaviour
     // Public scores, available for objects outside of the Game Manager
     [Header("Score gauges")]
     [Range(0, 100)]
-    public int UrgeScore;
+    public float UrgeScore;
     [Range(0, 100)]
-    public int FearScore;
+    public float FearScore;
+
+    // Act on location of player
+    [Header("Location logic")]
+    public bool IsInSafeZone;
 
     // UI?
 
@@ -30,6 +34,13 @@ public class GameManager : MonoBehaviour
     // Once per frame
     void Update()
     {
-        
+        if (!IsInSafeZone)
+        {
+            FearScore += 0.03f;
+        }
+        else
+        {
+            FearScore -= 0.03f;
+        }
     }
 }
