@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Floater v0.0.2
 // by Donovan Keith
@@ -15,9 +13,9 @@ public class floatingAnimation : MonoBehaviour
     public float frequency = 1f;
 
     // Position Storage Variables
-    private Vector3 posOffset = new Vector3();
+    private Vector3 posOffset;
 
-    private Vector3 tempPos = new Vector3();
+    private Vector3 tempPos;
 
     // Use this for initialization
     private void Start()
