@@ -1,38 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mail;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParentScript : MonoBehaviour
 {
     [Header("Variables")]
-    public float SafeZone = 10.0f;
-    public float MovementSpeed = 2.0f;
+    public float SafeZoneRadius = 10.0f;
+    public float MovementSpeed = 4.0f;
 
     public float MaxSafeZoneSize = 10.0f;
 
     // Children objects (should be there)
-    private Collider SafeZoneCollider;
+    [Header("Related game objects")]
+    public string PlayerName = "Player";
+    private SphereCollider SafeZoneCollider;
 
-    private enum SafeZoneSize
-    {
-        Grow, Stay, Shrink
-    }
+    private GameManager _gm;
 
     // Start is called before the first frame update
     void Start()
     {
         // Find children
-        SafeZoneCollider = gameObject.transform.Find("Collider").GetComponent<Collider>();
-
-
+        SafeZoneCollider = GetComponent<SphereCollider>();
+        _gm = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Update Safezone
-        SafeZoneCollider.transform.localScale = new Vector3(SafeZone, 1.0f, SafeZone);
+        // Decrease Safezone if child passes fear threshold (optional?)
+        if (_gm.FearScore > 40)
+        {
+            Debug.Log("True");
+            SafeZoneCollider.radius = MaxSafeZoneSize * (1 - ((_gm.FearScore - 40) / 105));
+        }
+        else
+        {
+            // Update Safezone
+            SafeZoneCollider.radius = SafeZoneRadius;
+        }
 
     }
 
@@ -40,23 +44,31 @@ public class ParentScript : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, SafeZone);
+        Gizmos.DrawWireSphere(transform.position, SafeZoneRadius);
     }
 
     // Entering and exiting of safety zone
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.IsInSafeZone = true;
+        if (other.name == PlayerName)
+        {
+            _gm.IsInSafeZone = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        GameManager.Instance.IsInSafeZone = true;
-        Debug.Log(other.name);
+        if (other.name == PlayerName)
+        {
+            _gm.IsInSafeZone = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        GameManager.Instance.IsInSafeZone = false;
+        if (other.name == PlayerName)
+        {
+            _gm.IsInSafeZone = false;
+        }
     }
 }
