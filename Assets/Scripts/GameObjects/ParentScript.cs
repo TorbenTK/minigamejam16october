@@ -37,7 +37,7 @@ public class ParentScript : MonoBehaviour
     }
 
     // Draw raw and target gizmo if in view
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, SafeZone);
