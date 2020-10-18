@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Variables")]
     public float MovementSpeed = 2.0f;
+
     public float RunningSpeedBonus = 3.0f;
     public bool CanRun = true;
     public bool IsRunning = false;
@@ -43,7 +44,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Expose to GameManager
-        GameManager.Instance.StaminaScore = CurrentStamina;
+        if (GameManager.Instance)
+        {
+            GameManager.Instance.StaminaScore = CurrentStamina;
+        }
     }
 
     private void FixedUpdate()
