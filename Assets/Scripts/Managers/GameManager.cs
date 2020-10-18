@@ -2,7 +2,6 @@
 
 public class GameManager : MonoBehaviour
 {
-
     // Struggle between Urge for fascination VS Fear of abandonment
 
     // Public variables, available for objects outside of the Game Manager
@@ -15,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Score gauges")]
     [Range(0, 100)]
     public float UrgeScore;
+
     [Range(0, 100)]
     public float FearScore;
 
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     // Act on location of player
     [Header("Location logic")]
     public bool IsInSafeZone;
+
     public bool IsTooAfraid;
 
     // Managed externally
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     // Singleton instance
     public static GameManager Instance;
+
     private void Awake()
     {
         if (Instance is null) Instance = this;
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Once per frame
-    void Update()
+    private void Update()
     {
         // Prevent exceeding of values
         if (UrgeScore > 100) UrgeScore = 100;
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour
 
         if (IsTooAfraid)
         {
-            UrgeScore -= UrgeDecreaseValue * 3;
+            DecreaseUrge();
         }
 
         // The urge for excitement strikes! If it hits 100, character loses control.
@@ -91,5 +93,10 @@ public class GameManager : MonoBehaviour
         {
             UrgeScore += UrgeIncreaseValue;
         }
+    }
+
+    public void DecreaseUrge()
+    {
+        UrgeScore -= UrgeDecreaseValue * 3;
     }
 }
