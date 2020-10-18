@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8429035455290954311}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 589.1538, y: 0, z: 161.47523}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
@@ -86,7 +86,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ferriswheel1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1853094968961178454, guid: b22b801f527bd5441832e616d1ef5609, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b22b801f527bd5441832e616d1ef5609, type: 3}
 --- !u!4 &9167334769303330554 stripped
 Transform:
