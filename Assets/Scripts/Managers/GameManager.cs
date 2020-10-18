@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public float FearIncreaseValue = 0.08f;
     public float FearDecreaseValue = 0.34f;
 
+    public float FearUpperThreshold = 70;
+    public float FearLowerThreshold = 5;
+
     // Act on location of player
     [Header("Location logic")]
     public bool IsInSafeZone;
@@ -62,11 +65,11 @@ public class GameManager : MonoBehaviour
 
         // Past a threshold, character gets too afraid.
         // Heavily decreases Urge and stops its increase
-        if (FearScore > 70)
+        if (FearScore > FearUpperThreshold)
         {
             IsTooAfraid = true;
         }
-        if (IsTooAfraid && FearScore <= 5)
+        if (IsTooAfraid && FearScore <= FearLowerThreshold)
         {
             IsTooAfraid = false;
         }
