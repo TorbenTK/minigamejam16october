@@ -6,17 +6,21 @@ public class UI_Game : MonoBehaviour
     // Elements required for UI
     [Header("Scores")]
     public Slider UrgeSlider;
+
     public Slider FearSlider;
 
     [Header("Stats")]
     public Slider StaminaSlider;
 
     // Once per frame
-    void Update()
+    private void Update()
     {
-        UrgeSlider.value = GameManager.Instance.UrgeScore;
-        FearSlider.value = GameManager.Instance.FearScore;
+        if (GameManager.Instance)
+        {
+            UrgeSlider.value = GameManager.Instance.UrgeScore;
+            FearSlider.value = GameManager.Instance.FearScore;
 
-        StaminaSlider.value = GameManager.Instance.StaminaScore;
+            StaminaSlider.value = GameManager.Instance.StaminaScore;
+        }
     }
 }
