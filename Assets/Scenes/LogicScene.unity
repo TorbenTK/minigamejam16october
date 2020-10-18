@@ -296,8 +296,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5660356524429471386, guid: 178541025fac2634690bfeed53d11f02, type: 3}
       propertyPath: CurrentStamina
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5660356524429471386, guid: 178541025fac2634690bfeed53d11f02, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 584106277}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178541025fac2634690bfeed53d11f02, type: 3}
 --- !u!1 &331678396
@@ -566,6 +570,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &584106277 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 3866883509514608535, guid: 178541025fac2634690bfeed53d11f02, type: 3}
+  m_PrefabInstance: {fileID: 285639585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1355511072
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +871,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1537381494009550440, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
       propertyPath: FearIncreaseValue
-      value: 0.035
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537381494009550440, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
+      propertyPath: FearDecreaseValue
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1537381494009550441, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
       propertyPath: m_LocalPosition.x

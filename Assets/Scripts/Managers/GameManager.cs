@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
     [Range(0, 100)]
     public float FearScore;
 
-    public float UrgeIncreaseValue = 0.010f;
-    public float UrgeDecreaseValue = 0.010f;
-    public float FearIncreaseValue = 0.015f;
-    public float FearDecreaseValue = 0.035f;
+    public float UrgeIncreaseValue = 0.1f;
+    public float UrgeDecreaseValue = 0.1f;
+    public float FearIncreaseValue = 0.08f;
+    public float FearDecreaseValue = 0.34f;
 
     // Act on location of player
     [Header("Location logic")]
@@ -40,6 +40,13 @@ public class GameManager : MonoBehaviour
     // Once per frame
     void Update()
     {
+        // Prevent exceeding of values
+        if (FearScore > 100) FearScore = 100;
+        if (FearScore < 0) FearScore = 0;
+    }
+
+    private void FixedUpdate()
+    {
         if (!IsInSafeZone)
         {
             FearScore += FearIncreaseValue;
@@ -48,9 +55,5 @@ public class GameManager : MonoBehaviour
         {
             FearScore -= FearDecreaseValue;
         }
-
-        // Prevent exceeding of values
-        if (FearScore > 100) FearScore = 100;
-        if (FearScore < 0) FearScore = 0;
     }
 }

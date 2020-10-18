@@ -8,28 +8,17 @@ public class PlayerMovement : MonoBehaviour
     public float MovementSpeed = 2.0f;
     public float RunningSpeedBonus = 3.0f;
     public bool CanRun = true;
+    public bool IsRunning = false;
 
-    public float CurrentRunCooldown = 600.0f;
-    public float RunCooldown = 600.0f;
+    public float CurrentRunCooldown = 0; // seconds in deltaTime
+    public float RunCooldown = 10; // seconds in deltaTime
 
     public int CurrentStamina = 0;
-    public int MaxStamina = 500;
+    public int MaxStamina = 100;
 
     // Once per frame
     private void Update()
     {
-        // Reduce / reset timers timers
-        if (!CanRun)
-        {
-            CurrentRunCooldown -= 0.5f;
-
-            if (CurrentRunCooldown <= 0)
-            {
-                CanRun = true;
-                CurrentStamina = MaxStamina;
-            }
-        }
-
         var xPos = Input.GetAxis("Horizontal");
         var zPos = Input.GetAxis("Vertical");
 
@@ -37,12 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump") && CanRun)
         {
-            CurrentStamina--;
-
+            IsRunning = true;
             controller.Move(movement * (MovementSpeed + RunningSpeedBonus) * Time.deltaTime);
         }
         else
         {
+            IsRunning = false;
             controller.Move(movement * MovementSpeed * Time.deltaTime);
         }
 
@@ -51,6 +40,26 @@ public class PlayerMovement : MonoBehaviour
         {
             CanRun = false;
             CurrentRunCooldown = RunCooldown;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // Reduce / reset timers timers
+        if (!CanRun)
+        {
+            CurrentRunCooldown -= Time.deltaTime;
+
+            if (CurrentRunCooldown <= 0)
+            {
+                CanRun = true;
+                CurrentStamina = MaxStamina;
+            }
+        }
+
+        if (IsRunning)
+        {
+            CurrentStamina--;
         }
     }
 }
