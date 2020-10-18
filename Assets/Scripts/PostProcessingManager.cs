@@ -7,7 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class PostProcessingManager : MonoBehaviour
 {
     [Range(0, 100)]
-    public float FearEffectThreshold = GameManager.Instance.FearUpperThreshold - 20;
+    public float FearEffectThreshold;
 
     public Volume volume;
 
@@ -16,6 +16,8 @@ public class PostProcessingManager : MonoBehaviour
     {
         // Initialize post-processing without applying fear-effect
         SetIntensity(0);
+
+        FearEffectThreshold = GameManager.Instance.FearUpperThreshold - 20;
     }
 
     // Update is called once per frame
