@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [Header("Objects")]
     public GameObject Player;
     public GameObject Parent;
+    [HideInInspector]
+    public Transform WaypointCollider;
 
     [Header("Score gauges")]
     [Range(0, 100)]
@@ -29,8 +31,6 @@ public class GameManager : MonoBehaviour
     // Managed externally
     [HideInInspector]
     public float StaminaScore;
-
-    public Transform WaypointCollider;
 
     // Singleton instance
     public static GameManager Instance;

@@ -18,6 +18,9 @@ public class ParentNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(waypoint.position);
+        if (waypoint)
+        {
+            agent.SetDestination(waypoint.position);
+        }
     }
 }

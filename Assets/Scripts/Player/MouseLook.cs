@@ -45,7 +45,7 @@ public class MouseLook : MonoBehaviour
 
         if (Physics.SphereCast(fwd, viewSphereSize, transform.forward, out hit, maxViewDistance))
         {
-            Debug.Log(hit.distance);
+            // Debug.Log(hit.distance);
         }
     }
 
