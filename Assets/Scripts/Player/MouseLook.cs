@@ -49,7 +49,7 @@ public class MouseLook : MonoBehaviour
         var ray = new Ray(Camera.transform.position, Camera.transform.rotation * Vector3.forward);
         if (Physics.Raycast(ray, out var hit, maxViewDistance) && hit.collider.gameObject.tag == "ShinyObject")
         {
-            _gm.UrgeScore -= _gm.UrgeDecreaseValue * 3;
+            _gm.DecreaseUrge();
             if (!alreadyPlayed)
             {
                 SoundSource.PlayOneShot(Laughing);
