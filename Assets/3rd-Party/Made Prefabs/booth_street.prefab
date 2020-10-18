@@ -1110,6 +1110,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 30eacfcb4c137bf4a9aaa3266373bd9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a8555c0cff30527479e32562cef9141f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30eacfcb4c137bf4a9aaa3266373bd9f, type: 3}
 --- !u!4 &2668228497715811412 stripped
@@ -1480,6 +1484,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 30eacfcb4c137bf4a9aaa3266373bd9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a8555c0cff30527479e32562cef9141f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30eacfcb4c137bf4a9aaa3266373bd9f, type: 3}
 --- !u!1001 &2668228499128832354
@@ -1769,6 +1777,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 53042740579360205}
     m_Modifications:
+    - target: {fileID: 1864954468127224632, guid: 487453f82efdc034fb8cedd2997b4858, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a8555c0cff30527479e32562cef9141f, type: 2}
     - target: {fileID: 5783022249592960935, guid: 487453f82efdc034fb8cedd2997b4858, type: 3}
       propertyPath: m_Name
       value: booth_animals
