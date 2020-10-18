@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5660356524429471386, guid: 178541025fac2634690bfeed53d11f02, type: 3}
-      propertyPath: agent
-      value: 
-      objectReference: {fileID: 21751928}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178541025fac2634690bfeed53d11f02, type: 3}
 --- !u!1 &21751927 stripped
@@ -189,28 +185,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 785315045075935298, guid: 178541025fac2634690bfeed53d11f02, type: 3}
   m_PrefabInstance: {fileID: 21751926}
   m_PrefabAsset: {fileID: 0}
---- !u!195 &21751928
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21751927}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &44780864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -399,10 +373,6 @@ PrefabInstance:
     - target: {fileID: 6316202219193015516, guid: d25a63826efd2b146912541c08cacae1, type: 3}
       propertyPath: m_Name
       value: Post Processing Object
-      objectReference: {fileID: 0}
-    - target: {fileID: 6316202219193015517, guid: d25a63826efd2b146912541c08cacae1, type: 3}
-      propertyPath: weight
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25a63826efd2b146912541c08cacae1, type: 3}

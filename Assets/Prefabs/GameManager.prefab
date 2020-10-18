@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1537381494009550441
 Transform:
@@ -43,12 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b028c84fe85b51142bdf0aeff4d07db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Parent: {fileID: 0}
+  WaypointCollider: {fileID: 0}
   UrgeScore: 0
   FearScore: 0
   UrgeIncreaseValue: 0.1
-  UrgeDecreaseValue: 0.1
+  UrgeDecreaseValue: 0.13
   FearIncreaseValue: 0.1
   FearDecreaseValue: 0.4
+  FearUpperThreshold: 70
+  FearLowerThreshold: 5
   IsInSafeZone: 0
   IsTooAfraid: 0
   StaminaScore: 0
