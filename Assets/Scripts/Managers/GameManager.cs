@@ -5,7 +5,11 @@ public class GameManager : MonoBehaviour
 
     // Struggle between Urge for fascination VS Fear of abandonment
 
-    // Public scores, available for objects outside of the Game Manager
+    // Public variables, available for objects outside of the Game Manager
+    [Header("Objects")]
+    public GameObject Player;
+    public GameObject Parent;
+
     [Header("Score gauges")]
     [Range(0, 100)]
     public float UrgeScore;
@@ -26,6 +30,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float StaminaScore;
 
+    public Transform WaypointCollider;
+
     // Singleton instance
     public static GameManager Instance;
     private void Awake()
@@ -38,6 +44,8 @@ public class GameManager : MonoBehaviour
         UrgeScore = 0;
         FearScore = 0;
         IsInSafeZone = true;
+
+        WaypointCollider = Parent.transform.Find("WaypointCollider");
     }
 
     // Once per frame

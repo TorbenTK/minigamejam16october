@@ -30,7 +30,6 @@ public class ParentScript : MonoBehaviour
 
         if (_gm.FearScore > 40)
         {
-            Debug.Log("True");
             SafeZoneRadius = MaxSafeZoneRadius * (1 - ((_gm.FearScore - 40) / 105));
         }
         else
