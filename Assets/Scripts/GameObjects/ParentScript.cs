@@ -6,7 +6,7 @@ public class ParentScript : MonoBehaviour
     public float SafeZoneRadius = 10.0f;
     public float MovementSpeed = 4.0f;
 
-    public float MaxSafeZoneSize = 10.0f;
+    public float MaxSafeZoneRadius = 10.0f;
 
     // Children objects (should be there)
     [Header("Related game objects")]
@@ -27,17 +27,19 @@ public class ParentScript : MonoBehaviour
     void Update()
     {
         // Decrease Safezone if child passes fear threshold (optional?)
+
         if (_gm.FearScore > 40)
         {
             Debug.Log("True");
-            SafeZoneCollider.radius = MaxSafeZoneSize * (1 - ((_gm.FearScore - 40) / 105));
+            SafeZoneRadius = MaxSafeZoneRadius * (1 - ((_gm.FearScore - 40) / 105));
         }
         else
         {
             // Update Safezone
-            SafeZoneCollider.radius = SafeZoneRadius;
+            SafeZoneRadius = MaxSafeZoneRadius;
         }
 
+        SafeZoneCollider.radius = SafeZoneRadius;
     }
 
     // Draw raw and target gizmo if in view

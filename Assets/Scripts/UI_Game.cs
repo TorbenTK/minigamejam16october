@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Game : MonoBehaviour
@@ -20,6 +17,6 @@ public class UI_Game : MonoBehaviour
         UrgeSlider.value = GameManager.Instance.UrgeScore;
         FearSlider.value = GameManager.Instance.FearScore;
 
-        StaminaSlider.value = GameManager.Instance.FearScore;
+        StaminaSlider.value = GameManager.Instance.StaminaScore;
     }
 }
