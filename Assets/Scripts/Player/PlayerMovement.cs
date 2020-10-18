@@ -41,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
             CanRun = false;
             CurrentRunCooldown = RunCooldown;
         }
+
+        // Expose to GameManager
+        GameManager.Instance.StaminaScore = CurrentStamina;
     }
 
     private void FixedUpdate()

@@ -20,8 +20,11 @@ public class GameManager : MonoBehaviour
     // Act on location of player
     [Header("Location logic")]
     public bool IsInSafeZone;
+    public bool IsTooAfraid;
 
-    // UI?
+    // Managed externally
+    [HideInInspector]
+    public float StaminaScore;
 
     // Singleton instance
     public static GameManager Instance;
@@ -41,8 +44,22 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Prevent exceeding of values
+        if (UrgeScore > 100) UrgeScore = 100;
+        if (UrgeScore < 0) UrgeScore = 0;
+
         if (FearScore > 100) FearScore = 100;
         if (FearScore < 0) FearScore = 0;
+
+        // Past a threshold, character gets too afraid.
+        // Heavily decreases Urge and stops its increase
+        if (FearScore > 70)
+        {
+            IsTooAfraid = true;
+        }
+        if (IsTooAfraid && FearScore <= 5)
+        {
+            IsTooAfraid = false;
+        }
     }
 
     private void FixedUpdate()
@@ -54,6 +71,17 @@ public class GameManager : MonoBehaviour
         else
         {
             FearScore -= FearDecreaseValue;
+        }
+
+        if (IsTooAfraid)
+        {
+            UrgeScore -= UrgeDecreaseValue * 3;
+        }
+
+        // The urge for excitement strikes! If it hits 100, character loses control.
+        if (!IsTooAfraid)
+        {
+            UrgeScore += UrgeIncreaseValue;
         }
     }
 }
