@@ -366,6 +366,14 @@ PrefabInstance:
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 135003461}
+    - target: {fileID: 9147943998854885046, guid: 67085c44ca168d049beb57644fc55e29, type: 3}
+      propertyPath: Anim
+      value: 
+      objectReference: {fileID: 880497825}
+    - target: {fileID: 9147943998854885046, guid: 67085c44ca168d049beb57644fc55e29, type: 3}
+      propertyPath: IsMoving
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67085c44ca168d049beb57644fc55e29, type: 3}
 --- !u!1001 &267347626
@@ -653,6 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28427da9acac9b744b087305c78d531c, type: 3}
+--- !u!95 &880497825 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1810273492229714302, guid: 67085c44ca168d049beb57644fc55e29, type: 3}
+  m_PrefabInstance: {fileID: 211429323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &893621913
 PrefabInstance:
   m_ObjectHideFlags: 0
