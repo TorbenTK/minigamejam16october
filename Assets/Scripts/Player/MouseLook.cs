@@ -4,20 +4,27 @@ public class MouseLook : MonoBehaviour
 {
     public float sensitivity = 500f;
     public Transform playerBody;
+    public Camera Camera;
+    public GameManager _gm;
+    public AudioClip Laughing;
+    public AudioSource SoundSource;
 
     private float xRotation;
+    private bool alreadyPlayed;
 
     // Colliders and raycasting
     private Vector3 fwd; // Forward direction of eyes
 
     [Header("Colliders and raycasting")]
     public int maxViewDistance = 10;
+
     public float viewSphereSize = 5.0f;
 
     // Start is called before the first frame update
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        _gm = GameManager.Instance;
     }
 
     // Update is called once per frame
@@ -34,18 +41,25 @@ public class MouseLook : MonoBehaviour
     }
 
     // Physics engine update
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        RaycastHit hit;
-        fwd = transform.TransformDirection(Vector3.forward) * maxViewDistance;
-
 #if UNITY_EDITOR
         Debug.DrawRay(transform.position, fwd, Color.green);
 #endif
-
-        if (Physics.SphereCast(fwd, viewSphereSize, transform.forward, out hit, maxViewDistance))
+        var ray = new Ray(Camera.transform.position, Camera.transform.rotation * Vector3.forward);
+        if (Physics.Raycast(ray, out var hit, maxViewDistance) && hit.collider.gameObject.tag == "ShinyObject")
         {
-            Debug.Log(hit.distance);
+            _gm.UrgeScore -= _gm.UrgeDecreaseValue * 3;
+            if (!alreadyPlayed)
+            {
+                SoundSource.PlayOneShot(Laughing);
+                alreadyPlayed = true;
+            }
+        }
+        else
+        {
+            SoundSource.Stop();
+            alreadyPlayed = false;
         }
     }
 
