@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance is null) Instance = this;
 
-        DontDestroyOnLoad(gameObject); // Exist across time and scenes
+        // DontDestroyOnLoad(gameObject); // Exist across time and scenes
 
         // Initialization
         UrgeScore = 0;

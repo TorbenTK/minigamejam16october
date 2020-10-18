@@ -246,6 +246,14 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 919279481}
+    - target: {fileID: 1537381494009550440, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
+      propertyPath: UrgeIncreaseValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537381494009550440, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
+      propertyPath: FearIncreaseValue
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1537381494009550441, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -293,6 +301,10 @@ PrefabInstance:
     - target: {fileID: 1537381494009550446, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537381494009550446, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7235ff89e692a34bbbe742815f71d03, type: 3}
@@ -1401,6 +1413,10 @@ PrefabInstance:
     - target: {fileID: 6316202219193015516, guid: d25a63826efd2b146912541c08cacae1, type: 3}
       propertyPath: m_Name
       value: Post Processing Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316202219193015516, guid: d25a63826efd2b146912541c08cacae1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25a63826efd2b146912541c08cacae1, type: 3}
