@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGameOver()
     {
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("GameOverScreen");
     }
 
     public void LoadStartScene()
