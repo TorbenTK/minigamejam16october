@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     // Public variables, available for objects outside of the Game Manager
     [Header("Objects")]
     public GameObject Player;
+
     public GameObject Parent;
+
     [HideInInspector]
     public Transform WaypointCollider;
 
@@ -70,9 +72,10 @@ public class GameManager : MonoBehaviour
             IsTooAfraid = true;
         }
 
-        if (FearScore == 100 || UrgeScore == 100)
+        if (FearScore == 100)
         {
             FindObjectOfType<SceneLoader>().LoadGameOver();
+            Destroy(gameObject);
         }
 
         if (IsTooAfraid && FearScore <= FearLowerThreshold)
