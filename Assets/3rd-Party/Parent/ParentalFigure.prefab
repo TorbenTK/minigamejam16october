@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SafeZoneRadius: 10
   MovementSpeed: 2
-  MaxSafeZoneSize: 10
+  MaxSafeZoneRadius: 10
   PlayerName: Player
 --- !u!135 &793437579578729336
 SphereCollider:

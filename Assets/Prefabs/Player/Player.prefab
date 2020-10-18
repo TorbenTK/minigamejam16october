@@ -147,7 +147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3866883509514608535}
-  speed: 2
+  MovementSpeed: 2
+  RunningSpeedBonus: 3
+  CanRun: 1
+  IsRunning: 0
+  CurrentRunCooldown: 0
+  RunCooldown: 10
+  CurrentStamina: 500
+  MaxStamina: 500
 --- !u!136 &738030495
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -227,7 +234,11 @@ PrefabInstance:
       objectReference: {fileID: 3626000750218830026}
     - target: {fileID: 5149156596330568610, guid: 45f2e08366d7160428c33bc1ec6dd3de, type: 3}
       propertyPath: maxViewDistance
-      value: 15
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149156596330568610, guid: 45f2e08366d7160428c33bc1ec6dd3de, type: 3}
+      propertyPath: sensitivity
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f2e08366d7160428c33bc1ec6dd3de, type: 3}

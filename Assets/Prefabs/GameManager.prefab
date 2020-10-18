@@ -45,3 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UrgeScore: 0
   FearScore: 0
+  UrgeIncreaseValue: 0.1
+  UrgeDecreaseValue: 0.1
+  FearIncreaseValue: 0.1
+  FearDecreaseValue: 0.4
+  IsInSafeZone: 0
+  IsTooAfraid: 0
+  StaminaScore: 0
