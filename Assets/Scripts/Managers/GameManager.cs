@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     // Public variables, available for objects outside of the Game Manager
     [Header("Objects")]
     public GameObject Player;
+
     public GameObject Parent;
+
     [HideInInspector]
     public Transform WaypointCollider;
 
