@@ -10,10 +10,10 @@ public class ParentScript : MonoBehaviour
 
     // Children objects (should be there)
     [Header("Related game objects")]
-    public string PlayerName = "Player";
     private SphereCollider SafeZoneCollider;
 
     private GameManager _gm;
+    private string _playerName;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,8 @@ public class ParentScript : MonoBehaviour
         // Find children
         SafeZoneCollider = GetComponent<SphereCollider>();
         _gm = GameManager.Instance;
+
+        _playerName = _gm.Player.name;
     }
 
     // Update is called once per frame
@@ -30,7 +32,6 @@ public class ParentScript : MonoBehaviour
 
         if (_gm.FearScore > 40)
         {
-            Debug.Log("True");
             SafeZoneRadius = MaxSafeZoneRadius * (1 - ((_gm.FearScore - 40) / 105));
         }
         else
@@ -52,7 +53,7 @@ public class ParentScript : MonoBehaviour
     // Entering and exiting of safety zone
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == PlayerName)
+        if (other.name == _playerName)
         {
             _gm.IsInSafeZone = true;
         }
@@ -60,7 +61,7 @@ public class ParentScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == PlayerName)
+        if (other.name == _playerName)
         {
             _gm.IsInSafeZone = true;
         }
@@ -68,7 +69,7 @@ public class ParentScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == PlayerName)
+        if (other.name == _playerName)
         {
             _gm.IsInSafeZone = false;
         }
