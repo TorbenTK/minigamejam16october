@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Waypoint : MonoBehaviour
 {
     public Transform[] destinations;
     private string _waypointColliderName;
+
+    public Color DebugColor = Color.blue;
 
     private void Start()
     {
@@ -12,7 +16,7 @@ public class Waypoint : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = DebugColor;
 
         // Draw gizmos to link waypoints together
         if (destinations.Length > 0)
@@ -40,6 +44,10 @@ public class Waypoint : MonoBehaviour
             return GameManager.Instance.Parent.transform; // freeze on location
         }
 
-        return destinations[Random.Range(0, destinations.Length - 1)];
+        // Return direction
+        var r = Random.Range(0, destinations.Length);
+
+        Debug.Log(destinations[r].name);
+        return destinations[r];
     }
 }
