@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6316202219193015514}
   - component: {fileID: 6316202219193015517}
+  - component: {fileID: 501168431}
   m_Layer: 0
   m_Name: Post Processing Object
   m_TagString: Untagged
@@ -46,5 +47,19 @@ MonoBehaviour:
   isGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 54a7ac14e18d53843b9e7b2c3663e363, type: 2}
+--- !u!114 &501168431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316202219193015516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa1a26ef7893894f98e51b08d7a3a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FearEffectThreshold: 50
+  volume: {fileID: 6316202219193015517}

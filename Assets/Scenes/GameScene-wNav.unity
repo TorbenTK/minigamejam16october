@@ -1734,6 +1734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Post Processing Object
       objectReference: {fileID: 0}
+    - target: {fileID: 6316202219193015517, guid: d25a63826efd2b146912541c08cacae1, type: 3}
+      propertyPath: weight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25a63826efd2b146912541c08cacae1, type: 3}
 --- !u!1001 &623922887
