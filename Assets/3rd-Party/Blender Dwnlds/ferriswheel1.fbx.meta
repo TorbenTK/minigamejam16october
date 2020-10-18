@@ -3,7 +3,52 @@ guid: b22b801f527bd5441832e616d1ef5609
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GREEN.PAINT
+    second: {fileID: -6478536213147159724, guid: 0f5992ed2860c654fb5ce75b46846207, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LEATHER
+    second: {fileID: 5275557918278951681, guid: 0f5992ed2860c654fb5ce75b46846207, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: METAL
+    second: {fileID: 2100000, guid: 2893db704c012da43b3bb492470e32cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: b4e6cf4fe416fa0488dba19f8e4ffdcb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TRIM.PAINT
+    second: {fileID: 2100000, guid: 973983aa1fd0275419df686b5ed959ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WHITE.PAINT
+    second: {fileID: -6131219759806366433, guid: 0f5992ed2860c654fb5ce75b46846207, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WOOD_
+    second: {fileID: 2100000, guid: e9018b4d6f686e446b671a85ef091af9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red.light
+    second: {fileID: 5275557918278951681, guid: 0f5992ed2860c654fb5ce75b46846207, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellow.light
+    second: {fileID: -876546973899608171, guid: 4826a69eaaa6e914a85a49b63929b12e, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
