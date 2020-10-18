@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     public int CurrentStamina = 0;
     public int MaxStamina = 100;
+
+    [Header("PlayerNavMesh")]
+    public NavMeshAgent agent;
 
     // Once per frame
     private void Update()
