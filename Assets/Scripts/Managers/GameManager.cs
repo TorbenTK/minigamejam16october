@@ -69,6 +69,12 @@ public class GameManager : MonoBehaviour
         {
             IsTooAfraid = true;
         }
+
+        if (FearScore == 100 || UrgeScore == 100)
+        {
+            FindObjectOfType<SceneLoader>().LoadGameOver();
+        }
+
         if (IsTooAfraid && FearScore <= FearLowerThreshold)
         {
             IsTooAfraid = false;
